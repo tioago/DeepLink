@@ -25,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
         btnOpenApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = getPackageManager().getLaunchIntentForPackage("br.com.cspar.vmcard");
+                Intent intent = getPackageManager().getLaunchIntentForPackage("{{package-app-na-loja}}");
 
                 if (intent == null) {
                     // Bring user to the market or let them choose an app?
                     intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("market://details?id=" + "br.com.cspar.vmcard"));
+                    intent.setData(Uri.parse("market://details?id=" + "{{package-app-na-loja}}"));
                 } else {
                     intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://vmcard.unimedceara.com.br/login?u=Xxxxxx&p=xxxxxx&o=xxxx&t=xxxx"));
+                    intent.setData(Uri.parse("{{modulo-de-deeplink-configurado-no-aplicativo}}/login?u=Xxxxxx&p=xxxxxx&o=xxxx&t=xxxx"));
                 }
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         btnOpenApp.setOnClickListener {
 
-            var intent = packageManager.getLaunchIntentForPackage("br.com.cspar.vmcard")
+            var intent = packageManager.getLaunchIntentForPackage("{{package-app-na-loja}}")
 
             if (intent == null) { // Bring user to the market or let them choose an app?
                 intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse("market://details?id=" + "br.com.cspar.vmcard")
+                intent.data = Uri.parse("market://details?id=" + "{{package-app-na-loja}}")
             } else {
                 intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse("http://vmcard.unimedceara.com.br/login?u=XXXX&p=XXXX&o=xxxx")
+                intent.data = Uri.parse("{{url-deep-link-configurado-no-app}}/login?u=XXXX&p=XXXX&o=xxxx")
             }
 
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
