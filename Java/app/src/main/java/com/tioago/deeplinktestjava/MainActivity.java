@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.setData(Uri.parse("market://details?id=" + "br.com.cspar.vmcard"));
                 } else {
                     intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://vmcard.unimedceara.com.br/login?u=Xxxxxx&p=xxxxxx&o=xxxx"));
+                    intent.setData(Uri.parse("http://vmcard.unimedceara.com.br/login?u=Xxxxxx&p=xxxxxx&o=xxxx&t=xxxx"));
                 }
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
